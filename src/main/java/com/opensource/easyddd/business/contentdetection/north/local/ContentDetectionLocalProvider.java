@@ -1,7 +1,7 @@
 package com.opensource.easyddd.business.business.contentdetection.north.local;
 
 
-import com.opensource.easyddd.business.contentdetection.application.ContentDetectionApplication;
+import com.opensource.easyddd.business.contentdetection.application.businessservices.ContentDetectionBusinessServer;
 import com.opensource.easyddd.business.contentdetection.domain.ImgInfoDomain;
 import org.springframework.stereotype.Service;
 
@@ -12,7 +12,7 @@ import java.util.List;
 public class ContentDetectionLocalProvider {
 
     @Resource
-    private ContentDetectionApplication contentDetectionApplication;
+    private ContentDetectionBusinessServer contentDetectionBusinessServer;
 
 
     /**
@@ -22,7 +22,7 @@ public class ContentDetectionLocalProvider {
      */
 
     public Boolean txtContentDetection(String content) {
-        return contentDetectionApplication.txtContentDetection(content);
+        return contentDetectionBusinessServer.txtContentDetection(content);
     }
 
 
@@ -33,7 +33,7 @@ public class ContentDetectionLocalProvider {
      * @return Boolean true标识有敏感内容，false标识没有敏感内容
      */
     public Boolean imgContentDetection(List<ImgInfoDomain> imgInfoDomainList) {
-        return contentDetectionApplication.imgContentDetection(imgInfoDomainList);
+        return contentDetectionBusinessServer.imgContentDetection(imgInfoDomainList);
     }
 
 }

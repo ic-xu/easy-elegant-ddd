@@ -1,4 +1,4 @@
-package com.opensource.easyddd.business.contentdetection.application;
+package com.opensource.easyddd.business.contentdetection.application.businessservices;
 
 
 import com.opensource.easyddd.business.contentdetection.domain.ContentDetectionService;
@@ -12,7 +12,7 @@ import java.util.List;
  * @author chenxu
  */
 @Service
-public class ContentDetectionApplication {
+public class ContentDetectionBusinessServer {
 
 
     @Resource

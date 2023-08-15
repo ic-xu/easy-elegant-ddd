@@ -7,6 +7,9 @@ import jakarta.annotation.Resource;
 
 import java.util.List;
 
+/**
+ * @author chenxu
+ */
 @Service
 public class ContentDetectionService {
 

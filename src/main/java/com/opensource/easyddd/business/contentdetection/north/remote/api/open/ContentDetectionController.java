@@ -1,7 +1,7 @@
 package com.opensource.easyddd.business.contentdetection.north.remote.api.open;
 
 
-import com.opensource.easyddd.business.contentdetection.application.ContentDetectionApplication;
+import com.opensource.easyddd.business.contentdetection.application.businessservices.ContentDetectionBusinessServer;
 import com.opensource.easyddd.infrastructure.config.apilog.aop.MethodLog;
 import com.opensource.easyddd.infrastructure.dto.BaseResponse;
 import io.swagger.v3.oas.annotations.Operation;
@@ -20,7 +20,7 @@ public class ContentDetectionController {
 
 
     @Resource
-    private ContentDetectionApplication contentDetectionApplication;
+    private ContentDetectionBusinessServer contentDetectionBusinessServer;
 
     /**
      * 文本鉴黄鉴暴处理
@@ -31,7 +31,7 @@ public class ContentDetectionController {
     @PostMapping("/txt")
     @MethodLog(remark = "文本鉴黄鉴暴处理")
     public BaseResponse<Boolean> txtContentDetection(String content)  {
-        Boolean result = contentDetectionApplication.txtContentDetection(content);
+        Boolean result = contentDetectionBusinessServer.txtContentDetection(content);
         return BaseResponse.ok(result);
     }
 }

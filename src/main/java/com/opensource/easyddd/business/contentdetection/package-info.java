@@ -14,4 +14,4 @@
  * 教育应用需遵从国家法律规定，应用内绝不允许出现色情暴力、网络游戏、商业广告及违背教育教学规律等内容的出现
  */
 
-package com.opensource.easyddd.business.business.contentdetection;
+package com.opensource.easyddd.business.contentdetection;
