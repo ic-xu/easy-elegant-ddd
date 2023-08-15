@@ -1,0 +1,18 @@
+
+
+
+
+
+
+
+
+
+
+app:
+  remote:
+    api:
+      proxy:
+        zero-auth:
+          url: http://localhost:8080
+          client-id: 1234567890
+          client-secret: 1234567890
