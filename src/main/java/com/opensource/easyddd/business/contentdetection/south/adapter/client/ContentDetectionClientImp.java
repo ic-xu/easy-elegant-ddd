@@ -14,6 +14,9 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 
+/**
+ * @author chenxu
+ */
 @Service
 public class ContentDetectionClientImp implements ContentDetectionClient {
 
@@ -22,7 +25,7 @@ public class ContentDetectionClientImp implements ContentDetectionClient {
     private GreenProxy greenProxy;
 
 
-    private String appKey = "os-business-line";
+    private String appKey = "xxxxx";
 
     /**
      * 文本鉴黄鉴暴处理
@@ -57,46 +60,22 @@ public class ContentDetectionClientImp implements ContentDetectionClient {
     @Override
     public Boolean imgContentDetection(List<ImgInfoDomain> imgInfoDomainList) {
 
-//        GreenImgAsyncRequestBody greenImgAsyncRequestBody = new GreenImgAsyncRequestBody();
-//        List<GreenImgAsyncRequestBody.ContentsDTO> contentsDTOList =new ArrayList<>();
-
-
         List<ClientGreenImgSynCheckResponse> result = new ArrayList<>();
         for (ImgInfoDomain imgInfoDomain : imgInfoDomainList) {
-//            GreenImgAsyncRequestBody.ContentsDTO contentsDTO = new GreenImgAsyncRequestBody.ContentsDTO();
-//            contentsDTO.setCstoreAppId(imgInfoDomain.getCstoreAppId());
-//            contentsDTO.setImageUrl(imgInfoDomain.getImageUrl());
-//            contentsDTO.setDataId(imgInfoDomain.getCstoreFileKey());
-//            contentsDTO.setCstoreFileKey(imgInfoDomain.getCstoreFileKey());
-//            contentsDTOList.add(contentsDTO);
 
             ClientGreenImgSyncRequestBody clientGreenImgSyncRequestBody = new ClientGreenImgSyncRequestBody()
-//                    .setCstoreAppId(imgInfoDomain.getCstoreAppId())
                     .setImageUrl(imgInfoDomain.getImageUrl())
-//                    .setCstoreFileKey(imgInfoDomain.getCstoreFileKey())
                     ;
-
 
             ClientGreenImgSynCheckResponse clientGreenImgSynCheckResponse = greenProxy.greenImgDetectionDetectionSync(appKey, clientGreenImgSyncRequestBody);
             result.add(clientGreenImgSynCheckResponse);
 
         }
-//        greenImgAsyncRequestBody.setContents(contentsDTOList);
-//        greenImgAsyncRequestBody.setCallback("http://www.baidu.com");
-//        GreenImgResponse greenImgResponse = greenProxy.greenImgDetectionDetectionAsync(appKey, greenImgAsyncRequestBody);
-
-
-//        if(greenImgResponse.getCode()!=0){
-//            throw new
-//        }
-//        System.out.println(greenImgResponse);
 
         for (ClientGreenImgSynCheckResponse clientGreenImgSynCheckResponse : result) {
             if (clientGreenImgSynCheckResponse.getCode() != 0) {
                 return true;
             }
-
-
             List<ClientGreenImgSynCheckResponse.DataDTO.SceneResultListDTO> sceneResultList = clientGreenImgSynCheckResponse.getData().getSceneResultList();
             for (ClientGreenImgSynCheckResponse.DataDTO.SceneResultListDTO sceneResultListDTO : sceneResultList) {
                 if (!"pass".equals(sceneResultListDTO.getSuggestion())) {

@@ -1,25 +1,46 @@
 
 
-
-
-
-
-
-
-
-
 app:
   remote:
     api:
       proxy:
-
         ## 内容检测远程调用地址
         green:
           url: http://localhost:8080
-
-
         ### 开放平台远程调用地址
         zero-auth:
           url: http://localhost:8080
           client-id: 1234567890
           client-secret: 1234567890
+spring:
+  datasource:
+    driver-class-name: org.h2.Driver
+    url: jdbc:h2:mem:db:~/test;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=TRUE
+    username: sa
+    password: test
+
+
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+  h2:
+    console:
+      enabled: true
+      path: /h2-ui
+
+
+
+
+### swagger
+knife4j:
+  setting:
+    enable-open-api: true
+  cors: true
+  enable: true
+springdoc:
+  api-docs:
+    version: openapi_3_1
+
+
+

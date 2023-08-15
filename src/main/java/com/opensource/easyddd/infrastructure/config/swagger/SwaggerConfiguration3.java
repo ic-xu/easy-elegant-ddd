@@ -21,20 +21,18 @@ import org.springframework.http.HttpHeaders;
 public class SwaggerConfiguration3 {
 
 
-
-
     @Bean
     public OpenAPI customOpenApi() {
         return new OpenAPI()
                 .info(new Info()
-                        .title("MAXHUB OS 业务线后台接口文档")
+                        .title("XXX 后台接口文档")
                         .version("1.0")
-                        .description("MAXHUB OS 业务线后台接口文档")
-                        .termsOfService("https://gitlab.gz.cvte.cn/esrd")
+                        .description("XXXX 后台接口文档")
+                        .termsOfService("xxxxxxxx")
                         .contact(new Contact().name("陈旭").email("chenxu9741@cvte.com").url(""))
                         .license(new License().name("Apache 2.0")
                                 .url("http://doc.xiaominfo.com"))
-                     ).addSecurityItem(new SecurityRequirement().addList(HttpHeaders.AUTHORIZATION))
+                ).addSecurityItem(new SecurityRequirement().addList(HttpHeaders.AUTHORIZATION))
                 .components(
                         new Components()
                                 .addSecuritySchemes(HttpHeaders.AUTHORIZATION,

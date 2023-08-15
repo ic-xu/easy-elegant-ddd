@@ -1,4 +1,4 @@
-package com.opensource.easyddd.business.business.contentdetection.north.local;
+package com.opensource.easyddd.business.contentdetection.north.local;
 
 
 import com.opensource.easyddd.business.contentdetection.application.businessservices.ContentDetectionBusinessServer;
@@ -8,6 +8,9 @@ import org.springframework.stereotype.Service;
 import jakarta.annotation.Resource;
 import java.util.List;
 
+/**
+ * @author chenxu
+ */
 @Service
 public class ContentDetectionLocalProvider {
 
