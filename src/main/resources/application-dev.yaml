@@ -12,6 +12,13 @@ app:
   remote:
     api:
       proxy:
+
+        ## 内容检测远程调用地址
+        green:
+          url: http://localhost:8080
+
+
+        ### 开放平台远程调用地址
         zero-auth:
           url: http://localhost:8080
           client-id: 1234567890
