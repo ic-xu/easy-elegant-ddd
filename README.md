@@ -5,12 +5,17 @@
 - 项目背景
 - 快速开始
 - 项目设计
-  - 项目结构设计
-  - 文档设计
-  - 异常设计
-  - 错误码设计
-  - 路由设计
-  - 服务设计
+  - [项目结构设计](doc/markdown/项目结构设计.md)
+  - [rest-full 接口规范设计](doc/markdown/api/rest-full%20接口设计.md)
+  - [rest-full 接口协议设计](doc/markdown/api/restfull接口协议设计.md)
+  - [Api接口文档设计](doc/markdown/文档设计.md)
+  - [异常设计](doc/markdown/error-code/异常设计.md)
+    - [1、HTTP错误码规范](doc/markdown/error-code/1、HTTP错误码规范.md)
+    - [2、错误码设计](doc/markdown/error-code/2、错误码设计.md)
+    - [3、JAVA 中的异常设计](doc/markdown/error-code/3、JAVA 中的异常设计.md)
+    - [4、JAVA 中的异常码自动生成](doc/markdown/error-code/4、JAVA 中的异常码自动生成.md)
+  - [路由设计](doc/markdown/全局路由信息列表.md)
+ 
 
 - 项目实现
   - 项目介绍
@@ -74,6 +79,9 @@ public class EasyDddApplication {
 
 http://localhost:8080/doc.html
 
+用户名：root
+
+密 码：root
 ## 项目介绍
 ```
 ```
