@@ -13,7 +13,7 @@
     - [1、HTTP错误码规范](doc/markdown/error-code/1、HTTP错误码规范.md)
     - [2、错误码设计](doc/markdown/error-code/2、错误码设计.md)
     - [3、JAVA 中的异常设计](doc/markdown/error-code/3、JAVA 中的异常设计.md)
-    - [4、JAVA 中的异常码自动生成](doc/markdown/error-code/4、JAVA 中的异常码自动生成.md)
+    - [4、JAVA 中的异常码自动生成](doc/markdown/error-code/4、JAVA结合OpenApi自动生成异常码文档.md)
   - [路由设计](doc/markdown/全局路由信息列表.md)
  
 
